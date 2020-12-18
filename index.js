@@ -13,7 +13,7 @@ const moment = require("moment-timezone")
 const fs = require("fs")
 const vcard = 'BEGIN:VCARD\n' // metadata of the contact card
             + 'VERSION:3.0\n' 
-            + 'FN:Aris\n' // full name
+            + 'FN:stylecogan\n' // full name
             + 'ORG:Creator AR15BOT;\n' // the organization of the contact
             + 'TEL;type=CELL;type=VOICE;waid=6285722553839:+62 857-2255-3839\n' // WhatsApp ID + phone number
             + 'END:VCARD'
@@ -24,9 +24,9 @@ const arrayBulan = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Jul
 const bulan = arrayBulan[moment().format('MM') - 1]
 
 const config = {
-    A187: '👾AR15BOT👾',
-    instagram: 'https://instagram.com/_sadboy.ig',
-    nomer: 'wa.me/6285722553839',
+    Stylecogan: '👾HinataCans👾',
+    instagram: 'https://instagram.com/_cogan_1928.ig',
+    nomer: 'wa.me/6289509938750',
     aktif: '24 JAM',
     youtube: 'https://youtube.com/channel/UCGYLWtyT9IADYNUiK0uZiGg',
     whatsapp: 'https://chat.whatsapp.com/DSSHmG2KjKJLoFp9B9mkVs',
@@ -34,7 +34,7 @@ const config = {
     waktu: time
 }
 
-const { A187, tanggal, waktu, instagram, whatsapp, youtube, nomer, aktif, ontime } = config
+const { stylecogan, tanggal, waktu, instagram, whatsapp, youtube, nomer, aktif, ontime } = config
 
 const
 {
@@ -147,7 +147,7 @@ client.connect();
 
 client.on('message-status-update', json => {
    const participant = json.participant ? ' (' + json.participant + ')' : ''
-   console.log(`[ ${time} ] => bot by ig:@_sadboy.ig`)
+   console.log(`[ ${time} ] => bot by ig:@_stylecogan`)
 })
 
 client.on('message-new', async (m) => {
@@ -169,10 +169,10 @@ client.on('message-new', async (m) => {
 	
    switch (prefix) {
        case 'help':
-           client.sendMessage(id, help.help(id, A187, tanggal, whatsapp, youtube, instagram, nomer),MessageType.text)
+           client.sendMessage(id, help.help(id, stylecogan, tanggal, whatsapp, youtube, instagram, nomer),MessageType.text)
            break      
       case 'donate':
-           client.sendMessage(id, donate.donate(id, A187, tanggal),MessageType.text)
+           client.sendMessage(id, donate.donate(id, stylecogan, tanggal),MessageType.text)
            break          
       case 'info':
            client.sendMessage(id, info.info(id, A187, tanggal),MessageType.text)
